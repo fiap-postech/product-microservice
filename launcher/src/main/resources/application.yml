@@ -1,0 +1,28 @@
+spring:
+  profiles.active: local
+  application.name: '${project.name}'
+  output.ansi.enabled: always
+  main.banner-mode: log
+  datasource:
+    url: jdbc:mysql://\${db.host}:\${db.port}/\${db.schema}?useSSL=false&allowPublicKeyRetrieval=true
+    username: \${db.username}
+    password: \${db.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa.hibernate.ddl-auto: none
+
+server.port: 8080
+
+management:
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure.include: health,info,metrics
+  endpoint.health.show-details: always
+  info:
+    build.enabled: true
+    env.enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /doc
+    url: /v3/api-docs.yaml
