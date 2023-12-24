@@ -11,5 +11,11 @@ dependencies {
 
     compileOnly project(":adapter")
 
+    testImplementation sharedLibs.springdoc.openapi.starter.webmvc.ui
+    testImplementation sharedLibs.spring.data.commons
+    testImplementation sharedLibs.spring.boot.starter.web
+    testImplementation sharedLibs.spring.boot.starter.test
+    testImplementation project(":adapter")
+
     api libs.rest.common
 }
