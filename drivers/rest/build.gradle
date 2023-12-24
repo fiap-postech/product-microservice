@@ -16,6 +16,8 @@ dependencies {
     testImplementation sharedLibs.spring.boot.starter.web
     testImplementation sharedLibs.spring.boot.starter.test
     testImplementation project(":adapter")
+    testImplementation("org.instancio:instancio-junit:3.6.0")
+    testImplementation("org.instancio:instancio-core:3.6.0")
 
     api libs.rest.common
 }
