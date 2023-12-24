@@ -20,12 +20,12 @@ public class ManageProductResource implements ManageProductResourceDoc {
     private final ManageProductController manageProductController;
 
     @PatchMapping("/{uuid}/enable")
-    public ProductResponse enable(@PathVariable String uuid) {
+    public ProductResponse enable(@PathVariable(name = "uuid") String uuid) {
         return productResponseMapper.toResponse(manageProductController.enable(uuid));
     }
 
     @PatchMapping("/{uuid}/disable")
-    public ProductResponse disable(@PathVariable String uuid) {
+    public ProductResponse disable(@PathVariable(name = "uuid") String uuid) {
         return productResponseMapper.toResponse(manageProductController.disable(uuid));
     }
 }

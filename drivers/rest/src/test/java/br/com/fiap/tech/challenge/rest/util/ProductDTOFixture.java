@@ -3,7 +3,6 @@ package br.com.fiap.tech.challenge.rest.util;
 
 import br.com.fiap.tech.challenge.adapter.dto.ComboDTO;
 import br.com.fiap.tech.challenge.adapter.dto.ProductDTO;
-import br.com.fiap.tech.challenge.enterprise.enums.ProductCategory;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.instancio.Instancio;
@@ -44,7 +43,7 @@ public abstract class ProductDTOFixture {
                 .toModel();
     }
 
-    private static Model<ComboDTO> comboProductModel() {
+    public static Model<ComboDTO> comboProductModel() {
         return Instancio.of(ComboDTO.class)
                 .set(field(ComboDTO::getName), "Bata Frita")
                 .set(field(ComboDTO::getDescription), "Uma bela porção de batata sequinha")
