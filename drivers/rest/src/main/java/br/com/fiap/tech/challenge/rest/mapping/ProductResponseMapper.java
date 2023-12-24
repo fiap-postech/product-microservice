@@ -5,11 +5,14 @@ import br.com.fiap.tech.challenge.adapter.dto.ProductDTO;
 import br.com.fiap.tech.challenge.rest.resource.response.ComboResponse;
 import br.com.fiap.tech.challenge.rest.resource.response.ProductResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 @Mapper(componentModel = SPRING)
 public interface ProductResponseMapper {
+
+    ProductResponseMapper INSTANCE = Mappers.getMapper(ProductResponseMapper.class);
 
     default ProductResponse toResponse(Object dto) {
         if (dto instanceof ComboDTO comboDTO){
