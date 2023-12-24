@@ -22,7 +22,7 @@ public class CreateSingleProductDTOInstance {
                 .toModel();
     }
 
-    public static CreateSingleProductDTO deafult() {
+    public static CreateSingleProductDTO getDefault() {
         return Instancio.of(defaultModel())
                 .create();
     }
