@@ -26,14 +26,13 @@
     },
     "category": {
       "type": "string",
-      "enum": ["SANDWICH", "BEVERAGE", "DESSERT", "SIDE_DISH"]
+      "enum": ["SANDWICH", "BEVERAGE", "DESSERT", "SIDE_DISH", "COMBO"]
     },
     "enabled": {
       "type": "boolean"
     }
   },
   "required": [
-    "type",
     "id",
     "name",
     "description",

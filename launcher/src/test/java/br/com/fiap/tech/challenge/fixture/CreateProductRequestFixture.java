@@ -3,6 +3,7 @@ package br.com.fiap.tech.challenge.fixture;
 import br.com.fiap.tech.challenge.enterprise.enums.ProductCategory;
 import br.com.fiap.tech.challenge.rest.resource.request.CreateComboProductRequest;
 import br.com.fiap.tech.challenge.rest.resource.request.CreateSingleProductRequest;
+import br.com.fiap.tech.challenge.rest.resource.request.UpdateProductRequest;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.instancio.Instancio;
@@ -36,6 +37,14 @@ public abstract class CreateProductRequestFixture {
                 .set(field(CreateComboProductRequest::getBeverageId), "e122debc-28ed-4475-a4e3-e1ad14468381")
                 .set(field(CreateComboProductRequest::getSandwichId), "69874a3f-b76e-4ac5-ba18-a19b979504cb")
                 .set(field(CreateComboProductRequest::getSideDishId), "ade7f71c-5642-4fff-9385-4b983a0f9a7d")
+                .toModel();
+    }
+
+    public static Model<UpdateProductRequest> UpdateProductRequestModel() {
+        return Instancio.of(UpdateProductRequest.class)
+                .set(field(UpdateProductRequest::getId), "e122debc-28ed-4475-a4e3-e1ad14468381")
+                .set(field(UpdateProductRequest::getDescription), "Nova Description Update")
+                .set(field(UpdateProductRequest::getImage), "http://localhost:8888/beverage.png")
                 .toModel();
     }
 }
