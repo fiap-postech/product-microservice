@@ -29,8 +29,22 @@ public abstract class ProductDTOFixture {
 
     public static Model<ProductDTO> sandwichModel() {
         return Instancio.of(ProductDTO.class)
+                .set(field(ProductDTO::getId), "82736436-9ea5-45d1-81a4-31cba447566e")
                 .set(field(ProductDTO::getName), "Hamburguer Tripo X")
+                .set(field(ProductDTO::getDescription), "Um belo sanduíche")
                 .set(field(ProductDTO::getImage), "http://localhost:8888/lanche.png")
+                .set(field(ProductDTO::getPrice), BigDecimal.valueOf(5.00))
+                .set(field(ProductDTO::getCategory), SANDWICH)
+                .toModel();
+    }
+
+    public static Model<ProductDTO> sandwichUpdatedModel() {
+        return Instancio.of(ProductDTO.class)
+                .set(field(ProductDTO::getId), "82736436-9ea5-45d1-81a4-31cba447566e")
+                .set(field(ProductDTO::getName), "Hamburguer Tripo X Atualizado")
+                .set(field(ProductDTO::getDescription), "Um belo sanduíche atualizado")
+                .set(field(ProductDTO::getImage), "http://localhost:8888/lanche-atualizado.png")
+                .set(field(ProductDTO::getPrice), BigDecimal.valueOf(6.00))
                 .set(field(ProductDTO::getCategory), SANDWICH)
                 .toModel();
     }

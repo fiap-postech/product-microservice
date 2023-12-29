@@ -45,7 +45,7 @@ public class ProductQueryResource implements ProductQueryResourceDoc {
     }
 
     @GetMapping("/{uuid}")
-    public ProductResponse getByUUID(@PathVariable String uuid) {
+    public ProductResponse getByUUID(@PathVariable("uuid") String uuid) {
         return toResponse(findProductByUUIDController.get(uuid));
     }
 

@@ -2,10 +2,9 @@ package br.com.fiap.tech.challenge.rest.resource;
 
 
 import br.com.fiap.tech.challenge.rest.common.handler.ResourceExceptionHandler;
-import br.com.fiap.tech.challenge.rest.mapping.ProductResponseMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.mockito.Mock;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -26,6 +25,7 @@ abstract class ResourceBaseTestSuite<T> {
         openMocks = openMocks(this);
         controller = createController();
         mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                .setCustomArgumentResolvers(new PageableHandlerMethodArgumentResolver())
                 .setControllerAdvice(new ResourceExceptionHandler())
                 .addFilter((request, response, chain) -> {
                     response.setCharacterEncoding("UTF-8");
