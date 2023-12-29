@@ -3,7 +3,6 @@ package br.com.fiap.tech.challenge.rest.util;
 
 import br.com.fiap.tech.challenge.adapter.dto.ComboDTO;
 import br.com.fiap.tech.challenge.adapter.dto.ProductDTO;
-import br.com.fiap.tech.challenge.enterprise.enums.ProductCategory;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.instancio.Instancio;
