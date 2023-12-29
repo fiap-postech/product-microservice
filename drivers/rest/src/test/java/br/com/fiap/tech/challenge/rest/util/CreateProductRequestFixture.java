@@ -16,7 +16,7 @@ import static org.instancio.Select.field;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public abstract class CreateProductRequestFixture {
 
-    public static Model<CreateSingleProductRequest> singleProductModel() {
+    public static Model<CreateSingleProductRequest> singleProductRequestModel() {
         return Instancio.of(CreateSingleProductRequest.class)
                 .set(field(CreateSingleProductRequest::getName), "Bata Frita")
                 .set(field(CreateSingleProductRequest::getDescription), "Uma bela porção de batata sequinha")
@@ -26,7 +26,7 @@ public abstract class CreateProductRequestFixture {
                 .toModel();
     }
 
-    public static Model<CreateComboProductRequest> comboProductModel() {
+    public static Model<CreateComboProductRequest> comboProductRequestModel() {
         return Instancio.of(CreateComboProductRequest.class)
                 .set(field(CreateComboProductRequest::getName), "Combo Triplo X")
                 .set(field(CreateComboProductRequest::getDescription), "Hamburguer Triplo X + Batata e Refri")
