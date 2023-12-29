@@ -44,7 +44,7 @@ public abstract class ProductDTOFixture {
                 .toModel();
     }
 
-    private static Model<ComboDTO> comboProductModel() {
+    public static Model<ComboDTO> comboProductModel() {
         return Instancio.of(ComboDTO.class)
                 .set(field(ComboDTO::getName), "Bata Frita")
                 .set(field(ComboDTO::getDescription), "Uma bela porção de batata sequinha")
