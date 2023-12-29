@@ -25,11 +25,8 @@
       "type": "number"
     },
     "category": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": ["SANDWICH", "BEVERAGE", "DESSERT", "SIDE_DISH"]
-      }
+      "type": "string",
+      "enum": ["SANDWICH", "BEVERAGE", "DESSERT", "SIDE_DISH"]
     },
     "enabled": {
       "type": "boolean"

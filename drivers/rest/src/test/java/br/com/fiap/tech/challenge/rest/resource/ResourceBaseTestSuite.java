@@ -16,6 +16,7 @@ abstract class ResourceBaseTestSuite<T> {
     AutoCloseable openMocks;
 
     protected MockMvc mockMvc;
+
     protected T controller;
 
     abstract T createController();

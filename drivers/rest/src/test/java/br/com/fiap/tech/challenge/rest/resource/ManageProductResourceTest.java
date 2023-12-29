@@ -7,6 +7,7 @@ import br.com.fiap.tech.challenge.rest.util.ProductDTOFixture;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+import static br.com.fiap.tech.challenge.rest.util.ProductDTOFixture.sandwichModel;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -14,14 +15,14 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class ManageProductResourceTest extends ResourceBaseTestSuite<ManageProductResource> {
+class ManageProductResourceTest extends ResourceBaseTestSuite<ManageProductResource> {
 
     @Mock
     private ManageProductController manageProductController;
 
     @Test
     void testEnableProduct() throws Exception {
-        var response = Fixture.create(ProductDTOFixture.sandwichModel());
+        var response = Fixture.create(sandwichModel());
         var uuid = response.getId();
 
         when(manageProductController.enable(any(String.class))).thenReturn(response);
@@ -37,7 +38,7 @@ public class ManageProductResourceTest extends ResourceBaseTestSuite<ManageProdu
 
     @Test
     void testDisableProduct() throws Exception {
-        var response = Fixture.create(ProductDTOFixture.sandwichModel());
+        var response = Fixture.create(sandwichModel());
         var uuid = response.getId();
 
         when(manageProductController.disable(any(String.class))).thenReturn(response);

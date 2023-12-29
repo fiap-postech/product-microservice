@@ -1,8 +1,8 @@
-package br.com.fiap.tech.challenge.rest.util;
+package br.com.fiap.tech.challenge.fixture;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Products {
+public class JsonUtil {
 
     public static String asJsonString(final Object obj) {
         try {

@@ -10,9 +10,9 @@ import org.mockito.Mock;
 
 import static br.com.fiap.tech.challenge.rest.util.CreateProductRequestFixture.comboProductRequestModel;
 import static br.com.fiap.tech.challenge.rest.util.CreateProductRequestFixture.singleProductRequestModel;
+import static br.com.fiap.tech.challenge.rest.util.JsonUtil.asJsonString;
 import static br.com.fiap.tech.challenge.rest.util.ProductDTOFixture.comboProductModel;
 import static br.com.fiap.tech.challenge.rest.util.ProductDTOFixture.sandwichModel;
-import static br.com.fiap.tech.challenge.rest.util.Products.asJsonString;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
