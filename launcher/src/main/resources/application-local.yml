@@ -4,6 +4,6 @@ server:
 db:
   host: localhost
   schema: product
-  username: sys_tech_challenge
-  password: 6#233zJMNTjkQb#sgps#
+  username: sys_product
+  password: product_6#233zJMNTjkQb#sgps#
   port: 3366
