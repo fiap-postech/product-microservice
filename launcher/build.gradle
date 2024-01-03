@@ -21,7 +21,6 @@ version '1.0.0'
 
 dependencies {
     implementation sharedLibs.spring.boot.starter.web
-    implementation sharedLibs.spring.cloud.starter.openfeign
     implementation sharedLibs.spring.boot.starter.actuator
     implementation sharedLibs.spring.boot.starter.validation
     implementation sharedLibs.spring.boot.starter.logging
