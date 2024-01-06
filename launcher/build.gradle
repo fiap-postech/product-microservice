@@ -15,9 +15,8 @@ plugins {
     alias(sharedLibs.plugins.flyway.plugin)
     alias(sharedLibs.plugins.spring.dependency.management.plugin)
     id "org.sonarqube" version "4.4.1.3373"
+    id 'pl.allegro.tech.build.axion-release' version '1.16.1'
 }
-
-version '1.0.0'
 
 dependencies {
     implementation sharedLibs.spring.boot.starter.web
@@ -47,23 +46,42 @@ dependencies {
     implementation project(":drivers:mysql")
 }
 
+scmVersion {
+    repository {
+        type = "git"
+        remote = "origin"
+    }
+
+    versionIncrementer 'incrementPatch'
+    branchVersionIncrementer = [
+            'hotfix/.*': 'incrementPatch',
+            'feature/.*': 'incrementMinor',
+    ]
+}
+
 java {
     processResources {
         expand(project.properties)
     }
 }
 
+bootJar {
+    archiveFileName = "product-service.jar"
+}
+
 springBoot {
     buildInfo {
         properties {
-            name = 'tech challenge api'
+            name = 'Tech Challenge - Product API'
             additional = [
                     "description": project?.description ?= "",
-                    "version"    : project.version
+                    "version"    : scmVersion.version
             ]
         }
     }
 }
+
+version = scmVersion.version
 
 jacocoTestReport {
     reports {
@@ -73,6 +91,7 @@ jacocoTestReport {
 
 sonarqube {
     properties {
+        property 'sonar.gradle.skipCompile', 'true'
         property 'sonar.host.url', 'https://sonarcloud.io'
         property 'sonar.organization', 'fiap-postech'
         property 'sonar.projectKey', 'fiap-postech_product-microservice'
